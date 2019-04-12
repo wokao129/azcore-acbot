@@ -9,8 +9,8 @@
 
 #include "Common.h"
 #include "Log.h"
-
-#include <mysql.h>
+#include <mysql/mysql.h>
+#include "DatabaseEnv.h"
 
 class Field
 {
