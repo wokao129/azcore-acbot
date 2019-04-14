@@ -50,7 +50,6 @@ target_include_directories(worldserver
     ${CMAKE_SOURCE_DIR}/src/server/game/AI/ScriptedAI
     ${CMAKE_SOURCE_DIR}/src/server/game/AI/SmartScripts
     ${CMAKE_SOURCE_DIR}/src/server/game/AuctionHouse
-    ${CMAKE_SOURCE_DIR}/src/server/game/AuctionHouse/AuctionHouseBot
     ${CMAKE_SOURCE_DIR}/src/server/game/Battlefield
     ${CMAKE_SOURCE_DIR}/src/server/game/Battlefield/Zones
     ${CMAKE_SOURCE_DIR}/src/server/game/Battlegrounds
@@ -114,7 +113,35 @@ target_include_directories(worldserver
     ${CMAKE_SOURCE_DIR}/src/server/game/Misc
     ${CMAKE_SOURCE_DIR}/src/server/scripts/PrecompiledHeaders
     ${CMAKE_SOURCE_DIR}/src/server/authserver/Server
-    ${CMAKE_SOURCE_DIR}/src/server/authserver/Realms)
+    ${CMAKE_SOURCE_DIR}/src/server/authserver/Realms
+    ${CMAKE_SOURCE_DIR}/modules/bot
+    ${CMAKE_SOURCE_DIR}/modules/bot/pch
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/actions
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/DK
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/druid
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/generic
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/hunter
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/mage
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/paladin
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/priest
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/rogue
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/shaman
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/triggers
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/values
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/values/formations
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/warlock
+    ${CMAKE_SOURCE_DIR}/modules/bot/playerbot/strategy/warrior
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/CommandLine
+    ${CMAKE_CURRENT_SOURCE_DIR}/RemoteAccess
+    ${CMAKE_CURRENT_SOURCE_DIR}/TCSoap
+    ${CMAKE_CURRENT_SOURCE_DIR}/WorldThread
+    ${ACE_INCLUDE_DIR}
+    ${MYSQL_INCLUDE_DIR}
+    ${OPENSSL_INCLUDE_DIR}
+)
 
 if( NOT WIN32 )
   set_target_properties(worldserver PROPERTIES
@@ -133,6 +160,7 @@ set_target_properties(worldserver PROPERTIES LINK_FLAGS "${worldserver_LINK_FLAG
 target_link_libraries(worldserver
   PUBLIC
     game
+    bot
     common
     scripts
     gsoap
