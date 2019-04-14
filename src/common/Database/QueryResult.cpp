@@ -5,6 +5,7 @@
  */
 
 #include "QueryResult.h"
+#include "Field.h"
 #include "DatabaseEnv.h"
 #include "Log.h"
 
