@@ -4,6 +4,7 @@
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  */
 
+#include "QueryResult.h"
 #include "DatabaseEnv.h"
 #include "Log.h"
 

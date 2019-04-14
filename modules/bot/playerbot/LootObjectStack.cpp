@@ -1,6 +1,11 @@
 #include "../pchdef.h"
+#include "Common.h"
 #include "LootObjectStack.h"
 #include "playerbot.h"
+#include "PlayerbotAI.h"
+#include "../Entities/Player/Player.h"
+#include "PlayerbotAIConfig.h"
+#include "RandomPlayerbotMgr.h"
 
 using namespace BotAI;
 using namespace std;

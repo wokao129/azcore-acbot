@@ -10,8 +10,8 @@
 #ifdef _WIN32
   #include <winsock2.h>
 #endif
-#include <mysql.h>
-#include <mysqld_error.h>
+#include <mysql/mysql.h>
+#include <mysql/mysqld_error.h>
 #include <errmsg.h>
 #include <chrono>
 #include <thread>

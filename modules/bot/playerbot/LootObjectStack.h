@@ -1,5 +1,9 @@
 #pragma once
-
+#include "Common.h"
+#include "../Entities/Player/Player.h"
+#include "PlayerbotAIConfig.h"
+#include "RandomPlayerbotMgr.h"
+#include "Field.h"
 using namespace std;
 
 namespace BotAI

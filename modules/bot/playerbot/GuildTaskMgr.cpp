@@ -50,7 +50,7 @@ void GuildTaskMgr::Update(Player* player, Player* guildMaster)
         return;
     }
 
-	sLog->outDetail("%s: guild task update for player %s", guild->GetName(), player->GetName());
+        sLog->outDetail("%s: guild task update for player %s", guild->GetName().c_str(), player->GetName().c_str());
 
     uint32 owner = (uint32)player->GetGUID();
 
