@@ -1,4 +1,5 @@
 #include "../pchdef.h"
+#include "Common.h"
 #include "playerbot.h"
 #include "PlayerbotAIConfig.h"
 #include "GuildTaskMgr.h"
