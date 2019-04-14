@@ -155,7 +155,9 @@ class CharacterCreateInfo
     friend class WorldSession;
     friend class Player;
 
-    protected:
+    // playerbot
+    public:
+    // end playerbot insert
         CharacterCreateInfo(std::string const& name, uint8 race, uint8 cclass, uint8 gender, uint8 skin, uint8 face, uint8 hairStyle, uint8 hairColor, uint8 facialHair, uint8 outfitId,
         WorldPacket& data) : Name(name), Race(race), Class(cclass), Gender(gender), Skin(skin), Face(face), HairStyle(hairStyle), HairColor(hairColor), FacialHair(facialHair),
         OutfitId(outfitId), Data(data), CharCount(0)
@@ -180,7 +182,29 @@ class CharacterCreateInfo
     private:
         virtual ~CharacterCreateInfo(){};
 };
+// playerbot mod
+class BotCharacterCreateInfo
+{
+	friend class WorldSession;
+	friend class Player;
 
+public:
+	/// User specified variables
+	std::string Name;
+	uint8 Race = 0;
+	uint8 Class = 0;
+	uint8 Gender = GENDER_NONE;
+	uint8 Skin = 0;
+	uint8 Face = 0;
+	uint8 HairStyle = 0;
+	uint8 HairColor = 0;
+	uint8 FacialHair = 0;
+	uint8 OutfitId = 0;
+
+	/// Server side data
+	uint8 CharCount = 0;
+};
+// end playerbot insert
 /// Player session in the World
 class WorldSession
 {
@@ -753,6 +777,9 @@ class WorldSession
         void HandleBattlefieldLeaveOpcode(WorldPacket& recvData);
         void HandleBattlemasterJoinArena(WorldPacket& recvData);
         void HandleReportPvPAFK(WorldPacket& recvData);
+		// playerbot mod
+		void HandleBotPackets();
+        //end playerbot insert
 
         void HandleWardenDataOpcode(WorldPacket& recvData);
         void HandleWorldTeleportOpcode(WorldPacket& recvData);
